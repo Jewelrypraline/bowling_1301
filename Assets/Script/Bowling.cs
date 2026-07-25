@@ -22,10 +22,26 @@ public class Bowling : MonoBehaviour
     {
         if (Keyboard.current.spaceKey.isPressed)
             Shootball();
+
+        if (Keyboard.current.rightArrowKey.isPressed)
+            MoveRight();
+
+        if (Keyboard.current.leftArrowKey.isPressed)
+            MoveLeft();
     }
 
     private void Shootball()
     {
         rb.AddForce(Vector3.forward * forcePower, ForceMode.Impulse);  //พวกที่เป็น x z y คือพวก forward up down
+    }
+
+    private void MoveRight()
+    {
+        transform.position += new Vector3(0.5f, 0f, 0f) * Time.deltaTime;
+    }
+
+    private void MoveLeft()
+    {
+        transform.position += new Vector3(0.5f, 0f, 0f) * Time.deltaTime;
     }
 }
