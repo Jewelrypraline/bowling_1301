@@ -23,10 +23,12 @@ public class Bowling : MonoBehaviour
         if (Keyboard.current.spaceKey.isPressed)
             Shootball();
 
-        if (Keyboard.current.rightArrowKey.isPressed)
+        if (Keyboard.current.rightArrowKey.isPressed 
+            || Keyboard.current.dKey.isPressed)
             MoveRight();
 
-        if (Keyboard.current.leftArrowKey.isPressed)
+        if (Keyboard.current.leftArrowKey.isPressed
+            || Keyboard.current.aKey.isPressed)
             MoveLeft();
     }
 
@@ -42,6 +44,6 @@ public class Bowling : MonoBehaviour
 
     private void MoveLeft()
     {
-        transform.position += new Vector3(0.5f, 0f, 0f) * Time.deltaTime;
+        transform.position += new Vector3(-0.5f, 0f, 0f) * Time.deltaTime;
     }
 }
