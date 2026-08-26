@@ -32,7 +32,7 @@ public class Bowling : MonoBehaviour
             MoveLeft();
     }
 
-    private void Shootball()
+    public void Shootball()
     {
         rb.AddForce(Vector3.forward * forcePower, ForceMode.Impulse);  //พวกที่เป็น x z y คือพวก forward up down
     }
